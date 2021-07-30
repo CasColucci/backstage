@@ -1,6 +1,6 @@
 {
   "name": "@backstage/plugin-catalog-backend-module-ldap",
-  "version": "0.2.2-0.15",
+  "version": "0.2.2-0.18",
   "main": "dist/index.cjs.js",
   "types": "src/index.ts",
   "license": "Apache-2.0",
@@ -29,7 +29,6 @@
     "test": "backstage-cli test",
     "prepack": "backstage-cli prepack",
     "postpack": "backstage-cli postpack",
-    "postinstall": "npx setup-ldap",
     "clean": "backstage-cli clean",
     "dev": "nodemon --watch \"src/**\" --ext \"ts\" --ignore \"*.spec.ts\" --exec \"ts-node --project tsconfig.cli.json src/cli/index.ts\""
   },
