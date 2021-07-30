@@ -96,6 +96,11 @@ type ConfigProcessingOptions = {
    * will be omitted.
    */
   valueTransform?: TransformFunc<any>;
+
+  /**
+   * Whether or not to include the `filteredKeys` property in the output `AppConfig`s.
+   */
+  withFilteredKeys?: boolean;
 };
 
 /**
