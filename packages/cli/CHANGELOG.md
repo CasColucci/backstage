@@ -1,5 +1,11 @@
 # @backstage/cli
 
+## 0.7.7
+
+### Patch Changes
+
+- 6aa7c3db7: bump node-tar version to the latest
+
 ## 0.7.6
 
 ### Patch Changes

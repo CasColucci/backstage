@@ -1,5 +1,11 @@
 # @backstage/create-app
 
+## 0.3.34
+
+### Patch Changes
+
+- c189c5da5: fix typo in the comments of EntityPage component
+
 ## 0.3.33
 
 ### Patch Changes

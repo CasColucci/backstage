@@ -1,5 +1,13 @@
 # @backstage/plugin-scaffolder-backend
 
+## 0.14.2
+
+### Patch Changes
+
+- 6cf48c609: Add the `scaffolder.defaultCommitMessage`, which defaults to `Initial commit`, so it can be customized.
+- Updated dependencies
+  - @backstage/backend-common@0.8.8
+
 ## 0.14.1
 
 ### Patch Changes

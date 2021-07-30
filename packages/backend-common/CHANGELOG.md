@@ -1,5 +1,11 @@
 # @backstage/backend-common
 
+## 0.8.8
+
+### Patch Changes
+
+- 6aa7c3db7: bump node-tar version to the latest
+
 ## 0.8.7
 
 ### Patch Changes
