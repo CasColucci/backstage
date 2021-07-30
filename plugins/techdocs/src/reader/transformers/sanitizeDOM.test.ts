@@ -14,9 +14,10 @@
  * limitations under the License.
  */
 
+import DOMPurify from 'dompurify';
 import { createTestShadowDom, FIXTURES } from '../../test-utils';
 import { Transformer } from './index';
-import { sanitizeDOM } from './sanitizeDOM';
+import { sanitizeDOM, safeLinksHook } from './sanitizeDOM';
 
 const injectMaliciousLink = (): Transformer => dom => {
   const link = document.createElement('a');
@@ -109,5 +110,47 @@ describe('sanitizeDOM', () => {
     });
 
     expect(shadowDom.querySelectorAll('link').length).toEqual(1);
+  });
+
+  it('adds safe head links hook', async () => {
+    const addHook = jest.spyOn(DOMPurify, 'addHook');
+    await createTestShadowDom(FIXTURES.FIXTURE_STANDARD_PAGE, {
+      preTransformers: [sanitizeDOM()],
+      postTransformers: [],
+    });
+    expect(addHook).toHaveBeenCalled();
+    addHook.mockRestore();
+  });
+
+  describe('safeLinksHook', () => {
+    const node = document.createElement('link');
+
+    beforeEach(() => {
+      node.setAttribute('rel', 'noopener noreferrer');
+    });
+
+    it('should not sanitize the techdocs css', () => {
+      node.setAttribute(
+        'href',
+        'https://demo.backstage.io/api/techdocs/static/docs/default/Component/backstage/assets/stylesheets/main.fe0cca5b.min.css',
+      );
+      const rel = safeLinksHook(node).getAttribute('rel');
+      expect(rel).toBe('stylesheet');
+    });
+
+    it('should not sanitize google fonts', () => {
+      node.setAttribute(
+        'href',
+        'https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback',
+      );
+      const rel = safeLinksHook(node).getAttribute('rel');
+      expect(rel).toBe('stylesheet');
+    });
+
+    it('should not sanitize gstatic fonts', () => {
+      node.setAttribute('href', 'https://fonts.gstatic.com/');
+      const rel = safeLinksHook(node).getAttribute('rel');
+      expect(rel).toBe('preconnect');
+    });
   });
 });
