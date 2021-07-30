@@ -404,7 +404,7 @@
     jsesc "^2.5.1"
     source-map "^0.5.0"
 
-"@babel/generator@^7.14.8":
+"@babel/generator@^7.12.5", "@babel/generator@^7.14.8":
   version "7.14.8"
   resolved "https://artifactory.spotify.net/artifactory/api/npm/virtual-npm/@babel/generator/-/generator-7.14.8.tgz#bf86fd6af96cf3b74395a8ca409515f89423e070"
   integrity sha1-v4b9avls87dDlajKQJUV+JQj4HA=
@@ -775,7 +775,7 @@
   resolved "https://registry.npmjs.org/@babel/parser/-/parser-7.14.4.tgz#a5c560d6db6cd8e6ed342368dea8039232cbab18"
   integrity sha512-ArliyUsWDUqEGfWcmzpGUzNfLxTdTp6WU4IuP6QFSp9gGfWS6boxFCkJSJ/L4+RG8z/FnIU3WxCk6hPL9SSWeA==
 
-"@babel/parser@^7.14.5", "@babel/parser@^7.14.8":
+"@babel/parser@^7.12.5", "@babel/parser@^7.14.5", "@babel/parser@^7.14.8":
   version "7.14.8"
   resolved "https://artifactory.spotify.net/artifactory/api/npm/virtual-npm/@babel/parser/-/parser-7.14.8.tgz#66fd41666b2d7b840bd5ace7f7416d5ac60208d4"
   integrity sha1-Zv1BZmste4QL1azn90FtWsYCCNQ=
@@ -1845,6 +1845,24 @@
   dependencies:
     exec-sh "^0.3.2"
     minimist "^1.2.0"
+
+"@codemod/core@^1.1.0":
+  version "1.1.0"
+  resolved "https://artifactory.spotify.net/artifactory/api/npm/virtual-npm/@codemod/core/-/core-1.1.0.tgz#828cad09903d23db3ab93cb23c9741fd901e5555"
+  integrity sha1-goytCZA9I9s6uTyyPJdB/ZAeVVU=
+  dependencies:
+    "@babel/core" "^7.12.3"
+    "@babel/generator" "^7.12.5"
+    "@codemod/parser" "^1.0.7"
+    recast "^0.19.0"
+    resolve "^1.12.0"
+
+"@codemod/parser@^1.0.7":
+  version "1.1.0"
+  resolved "https://artifactory.spotify.net/artifactory/api/npm/virtual-npm/@codemod/parser/-/parser-1.1.0.tgz#8a8f0bf2f261082cf5b8a39cfafe3d15e2454da6"
+  integrity sha1-io8L8vJhCCz1uKOc+v49FeJFTaY=
+  dependencies:
+    "@babel/parser" "^7.12.5"
 
 "@cypress/listr-verbose-renderer@^0.4.1":
   version "0.4.1"
@@ -8108,6 +8126,11 @@ ast-types-flow@^0.0.7:
   version "0.0.7"
   resolved "https://registry.npmjs.org/ast-types-flow/-/ast-types-flow-0.0.7.tgz#f70b735c6bca1a5c9c22d982c3e39e7feba3bdad"
   integrity sha1-9wtzXGvKGlycItmCw+Oef+ujva0=
+
+ast-types@0.13.3:
+  version "0.13.3"
+  resolved "https://artifactory.spotify.net/artifactory/api/npm/virtual-npm/ast-types/-/ast-types-0.13.3.tgz#50da3f28d17bdbc7969a3a2d83a0e4a72ae755a7"
+  integrity sha1-UNo/KNF728eWmjotg6DkpyrnVac=
 
 ast-types@0.14.2, ast-types@^0.14.1, ast-types@^0.14.2:
   version "0.14.2"
@@ -21271,6 +21294,11 @@ prettier@^2.2.1, prettier@~2.2.1:
   resolved "https://registry.npmjs.org/prettier/-/prettier-2.2.1.tgz#795a1a78dd52f073da0cd42b21f9c91381923ff5"
   integrity sha512-PqyhM2yCjg/oKkFPtTGUojv7gnZAoG80ttl45O6x2Ug/rMJw4wcc9k6aaf2hibP7BGVCCM33gZoGjyvt9mm16Q==
 
+prettier@^2.3.2:
+  version "2.3.2"
+  resolved "https://artifactory.spotify.net/artifactory/api/npm/virtual-npm/prettier/-/prettier-2.3.2.tgz#ef280a05ec253712e486233db5c6f23441e7342d"
+  integrity sha1-7ygKBewlNxLkhiM9tcbyNEHnNC0=
+
 pretty-bytes@^5.6.0:
   version "5.6.0"
   resolved "https://registry.npmjs.org/pretty-bytes/-/pretty-bytes-5.6.0.tgz#356256f643804773c82f64723fe78c92c62beaeb"
@@ -22495,6 +22523,16 @@ readdirp@~3.6.0:
   integrity sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==
   dependencies:
     picomatch "^2.2.1"
+
+recast@^0.19.0:
+  version "0.19.1"
+  resolved "https://artifactory.spotify.net/artifactory/api/npm/virtual-npm/recast/-/recast-0.19.1.tgz#555f3612a5a10c9f44b9a923875c51ff775de6c8"
+  integrity sha1-VV82EqWhDJ9Euakjh1xR/3dd5sg=
+  dependencies:
+    ast-types "0.13.3"
+    esprima "~4.0.0"
+    private "^0.1.8"
+    source-map "~0.6.1"
 
 recast@^0.20.3, recast@^0.20.4:
   version "0.20.4"
@@ -26960,6 +26998,11 @@ yaml@*, yaml@^1.10.0, yaml@^1.10.2, yaml@^1.7.2, yaml@^1.9.2:
   version "1.10.2"
   resolved "https://registry.npmjs.org/yaml/-/yaml-1.10.2.tgz#2301c5ffbf12b467de8da2333a459e29e7920e4b"
   integrity sha512-r3vXyErRCYJ7wg28yvBY5VSoAF8ZvlcW9/BwUzEtUsjvX/DKs24dIkuwjtuprwJJHsbyUbLApepYTR1BN4uHrg==
+
+yaml@^2.0.0-7:
+  version "2.0.0-7"
+  resolved "https://artifactory.spotify.net/artifactory/api/npm/virtual-npm/yaml/-/yaml-2.0.0-7.tgz#9799d9d85dfc8f01e4cc425e18e09215364beef1"
+  integrity sha1-l5nZ2F38jwHkzEJeGOCSFTZL7vE=
 
 yargs-parser@20.2.4, yargs-parser@^20.2.2, yargs-parser@^20.2.3:
   version "20.2.4"
